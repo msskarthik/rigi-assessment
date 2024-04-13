@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The Video Playlist Application is a web application built using React and TypeScript. It allows users to view a list of videos in a playlist format, with each video displaying its title, thumbnail, and description. Users can drag and drop videos to reorder the playlist according to their preference.
 
 ## Live Demo
-View the deployed application: [Video Playlist App](https://your-app-url.com)
+View the deployed application: [Video Playlist App](https://rigi-video-playlist.netlify.app/)
 
 ## Features
 - **Video Playlist Display**:
