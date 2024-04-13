@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.w-max {
+  width: max-content;
+}
+
+.top-56 {
+  top: 56px;
+}
+
+.w-16rem {
+  width: 16rem;
+}
+.hidden {
+  display: none;
+}
+
+.content {
+  width: 240px;
+  height: 180px;
+}
+
+.justify-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.main-color {
+  color: #4a148c;
+}
+
+.bg-light-1 {
+  background: #4f2485;
+  border-radius: 16px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #bdaad5;
+}
