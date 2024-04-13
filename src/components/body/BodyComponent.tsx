@@ -80,7 +80,7 @@ const BodyComponent = () => {
 
     return (
         <div className="p-4 mt-2 flex flex-col gap-6 absolute top-56 w-full">
-            <div className="text-3xl w-full flex pb-1 font-bold text-left main-color justify-between border-bottom">Diverse Playlist
+            <div className="text-3xl w-full flex pb-4 font-bold text-left main-color justify-between border-bottom">Diverse Playlist
                 <div className="relative w-72 flex align-middle">
                     <input
                         className="border border-gray-300 rounded-lg px-8 py-2 h-10 placeholder-gray-400 text-gray-700 text-sm w-full focus:outline-none"
@@ -99,17 +99,20 @@ const BodyComponent = () => {
                     <div className="grid grid-cols-1 w-full sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 gap-2">
                         {
                             videosList.map((eachVideo: any) => (
-                                <div id={eachVideo.title} key={`video__${eachVideo.title}`} className="w-full flex flex-col justify-between gap-1 h-auto p-4 shadow-xl bg-light-1">
-                                    <div draggable={inputVal.length > 0 ? false : true} onDrop={(e: any) => handleDrop(e, eachVideo)} onDragStart={(e: any) => handleDragStart(e, eachVideo.title)} onDragOver={(e: any) => handleDragOver(e)} className="w-full text-left cursor-grab">
-                                        <div className="text-white text-2xl text-left">{eachVideo.title}</div>
-                                        <div className="mb-2 text-white text-sm text-left">{eachVideo.subtitle}</div>
-                                    </div>
+                                <div draggable={inputVal.length > 0 ? false : true} onDragStart={(e: any) => handleDragStart(e, eachVideo.title)} onDragOver={(e: any) => handleDragOver(e)} onDrop={(e: any) => handleDrop(e, eachVideo)} id={eachVideo.title} key={`video__${eachVideo.title}`} className="w-full flex flex-col justify-between gap-1 h-auto shadow-xl bg-light-1">
                                     <div className="relative w-full h-0" style={{ paddingBottom: '56.25%' }}>
-                                        <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover" controls 
-                                        poster={`https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/${eachVideo.thumb}`}
+                                        <video autoPlay loop muted className="absolute rounded-tl-2xl rounded-tr-2xl inset-0 w-full h-full object-cover" controls
+                                            poster={`https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/${eachVideo.thumb}`}
                                         >
                                             <source src={eachVideo.sources[0]} type="video/mp4" />
                                         </video>
+                                    </div>
+                                    <div className=" p-4 w-full text-left cursor-grab">
+                                        <div className="text-white text-2xl text-left">{eachVideo.title}</div>
+                                        <div className="text-white text-sm text-left">{eachVideo.subtitle}</div>
+                                        <div className="mb-2 text-white text-md text-left overflow-hidden overflow-ellipsis max-h-[3em] line-clamp-2" title={eachVideo.description}>
+                                            {eachVideo.description}
+                                        </div>
                                     </div>
                                 </div>
                             ))
